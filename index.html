@@ -12,11 +12,73 @@
       href="./images/favicon-32x32.png"
     />
 
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="style.css" />
 
     <title>Testimonials Slider</title>
   </head>
   <body>
+    <main class="container">
+      <!-- image of the person -->
+      <section class="image-container">
+        <!-- dectoraction background -->
+        <img
+          class="image-bg"
+          src="./images/pattern-bg.svg"
+          alt="image background decoration"
+        />
+        <!-- image of person + slider buttons -->
+        <div class="image-and-button">
+          <!-- image person -->
+          <img
+            class="image-person"
+            src="./images/image-tanya.jpg"
+            alt="image of person"
+          />
+          <!-- buttons -->
+          <div class="two-button-container">
+            <button class="slide-button prev-btn">
+              <img src="./images/icon-prev.svg" alt="" />
+            </button>
+            <button class="slide-button next-btn">
+              <img src="./images/icon-next.svg" alt="" />
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- quote section -->
+      <section class="quote-container">
+        <!-- quote background secoration -->
+        <img
+          class="quote-decoration"
+          src="./images/pattern-quotes.svg"
+          alt="quote image"
+        />
+        <!-- quotes + info -->
+        <div class="text-info">
+          <!-- quote -->
+          <p class="quote">
+            “ I’ve been interested in coding for a while but never taken the
+            jump, until now. I couldn’t recommend this course enough. I’m now in
+            the job of my dreams and so excited about the future. ”
+          </p>
+          <!-- name and position -->
+          <div class="person-info">
+            <p class="person-name">Tanya Sinclair</p>
+            <p class="person-position">UX Engineer</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- image decoration -->
+    <img src="./images/pattern-curve.svg" alt="" class="bg-decoration" />
     <script src="./app.js"></script>
   </body>
 </html>
