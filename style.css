@@ -92,7 +92,6 @@ body {
 .image-and-button img {
   width: 80%;
   border-radius: 0.4rem;
-  box-shadow: -0.5rem 1rem 3rem rgba(0, 0, 0, 0.11);
 }
 .prev-img {
   position: absolute;
@@ -116,6 +115,7 @@ body {
   bottom: 0;
   transform: translateY(50%);
   z-index: 99;
+  box-shadow: -0.5rem 1rem 3rem rgba(0, 0, 0, 0.11);
 }
 .slide-button {
   padding: 0.5rem 0.8rem;
@@ -124,6 +124,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 .slide-button img {
   width: 80%;
