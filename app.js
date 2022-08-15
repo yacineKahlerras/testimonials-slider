@@ -41,3 +41,14 @@ const slide = () => {
 slideBtns.forEach((b) => {
   b.addEventListener("click", slide);
 });
+document.onkeydown = (e) => {
+  e = e || window.event;
+  if (
+    e.key === "ArrowLeft" ||
+    e.key === "ArrowRight" ||
+    e.key === "ArrowUp" ||
+    e.key === "ArrowDown"
+  ) {
+    slide();
+  }
+};
