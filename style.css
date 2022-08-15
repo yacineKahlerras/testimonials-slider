@@ -28,16 +28,24 @@ body {
   justify-content: center;
   gap: 2rem;
   position: relative;
-  margin: auto;
+  margin: 3rem 0;
 }
-@media (min-width: 700px) {
+@media (min-width: 570px) {
   :root {
-    font-size: 16px;
+    font-size: calc(14px + (32 - 14) * ((100vw - 300px) / (1600 - 300)));
+  }
+  body {
+    overflow-x: hidden;
   }
   .container {
     width: 80%;
     height: 80%;
     flex-direction: row-reverse;
+  }
+}
+@media (min-width: 1400px) {
+  :root {
+    font-size: 32px;
   }
 }
 /* 
@@ -55,29 +63,50 @@ body {
   justify-content: center;
   position: relative;
 }
+/* the image of person */
 .image-container img {
   width: 100%;
 }
 .image-bg {
   position: absolute;
-  top: 0;
-  left: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.image-person-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 .image-and-button {
-  width: 80%;
-  margin: 1rem;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  z-index: 1;
   position: relative;
-  box-shadow: -0.5rem 3rem 3rem rgba(0, 0, 0, 0.11);
 }
 .image-and-button img {
-  width: 100%;
+  width: 80%;
   border-radius: 0.4rem;
+  box-shadow: -0.5rem 1rem 3rem rgba(0, 0, 0, 0.11);
 }
+.prev-img {
+  position: absolute;
+  transform: translateX(-100%);
+  transition: 0.5s;
+  opacity: 0;
+}
+.next-img {
+  position: absolute;
+  transform: translateX(100%);
+  transition: 0.5s;
+  opacity: 0;
+}
+/* buttons */
 .two-button-container {
   display: flex;
   flex-direction: row;
@@ -86,6 +115,7 @@ body {
   position: absolute;
   bottom: 0;
   transform: translateY(50%);
+  z-index: 99;
 }
 .slide-button {
   padding: 0.5rem 0.8rem;
@@ -107,8 +137,6 @@ body {
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
   padding-left: 0.4rem;
-}
-@media (min-width: 800px) {
 }
 /* 
 ====================================
@@ -139,20 +167,86 @@ body {
 .person-info {
   display: block;
   padding-top: 1rem;
+  position: relative;
+}
+.single-person-info {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  padding-top: 1rem;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: 0.5s;
 }
 .person-name {
   font-size: 0.9rem;
   color: var(--Dark-Blue);
   font-weight: 700;
+  position: relative;
 }
 .person-position {
   font-size: 0.9rem;
   color: var(--Grayish-Blue);
   font-weight: 500;
+  position: relative;
 }
 .bg-decoration {
   width: 12rem;
   position: absolute;
   bottom: 0;
   left: 0;
+}
+.two-quotes-container {
+  position: relative;
+  height: fit-content;
+  display: flex;
+  overflow: hidden;
+  z-index: 2;
+}
+.quote {
+  transition: 0.5s;
+}
+.prev-quote {
+  position: absolute;
+  transform: translateY(100%);
+  opacity: 0;
+}
+.next-quote {
+  position: absolute;
+  transform: translateY(-100%);
+  opacity: 0;
+}
+@media (min-width: 570px) {
+  .quote-container {
+    text-align: left;
+  }
+  .quote {
+    width: 100%;
+    font-size: 1rem;
+  }
+  .person-info {
+    width: 200%;
+  }
+  .single-person-info {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+  }
+  .person-position {
+    font-size: 0.8rem;
+    color: var(--Grayish-Blue);
+    font-weight: 500;
+  }
+  .two-quotes-container {
+    width: 140%;
+  }
+}
+.active {
+  position: relative;
+  transform: translateX(0);
+  opacity: 1;
+}
+.active-names {
+  opacity: 1;
 }

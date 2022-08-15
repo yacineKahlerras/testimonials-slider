@@ -37,11 +37,18 @@
         <!-- image of person + slider buttons -->
         <div class="image-and-button">
           <!-- image person -->
-          <img
-            class="image-person"
-            src="./images/image-tanya.jpg"
-            alt="image of person"
-          />
+          <div class="image-person-container">
+            <img
+              class="image-person prev-img active"
+              src="./images/image-tanya.jpg"
+              alt="image of person"
+            />
+            <img
+              class="image-person next-img"
+              src="./images/image-john.jpg"
+              alt="image of person"
+            />
+          </div>
           <!-- buttons -->
           <div class="two-button-container">
             <button class="slide-button prev-btn">
@@ -64,15 +71,29 @@
         <!-- quotes + info -->
         <div class="text-info">
           <!-- quote -->
-          <p class="quote">
-            “ I’ve been interested in coding for a while but never taken the
-            jump, until now. I couldn’t recommend this course enough. I’m now in
-            the job of my dreams and so excited about the future. ”
-          </p>
+          <div class="two-quotes-container">
+            <p class="quote prev-quote active">
+              “ I’ve been interested in coding for a while but never taken the
+              jump, until now. I couldn’t recommend this course enough. I’m now
+              in the job of my dreams and so excited about the future. ”
+            </p>
+            <p class="quote next-quote">
+              “ If you want to lay the best foundation possible I’d recommend
+              taking this course. The depth the instructors go into is
+              incredible. I now feel so confident about starting up as a
+              professional developer. ”
+            </p>
+          </div>
           <!-- name and position -->
           <div class="person-info">
-            <p class="person-name">Tanya Sinclair</p>
-            <p class="person-position">UX Engineer</p>
+            <div class="single-person-info active-names">
+              <p class="person-name">Tanya Sinclair</p>
+              <p class="person-position">UX Engineer</p>
+            </div>
+            <div class="single-person-info">
+              <p class="person-name">John TarkporJunior</p>
+              <p class="person-position">Front-end Developer</p>
+            </div>
           </div>
         </div>
       </section>
