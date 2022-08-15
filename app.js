@@ -9,8 +9,10 @@ const nextQuote = document.querySelector(".next-quote");
 
 const namesContainer = [...document.querySelectorAll(".single-person-info")];
 
-const slide = (btn) => {
-  if (btn.classList.contains("prev-btn")) {
+let isNext = true;
+
+const slide = () => {
+  if (!isNext) {
     prevImg.classList.add("active");
     nextImg.classList.remove("active");
 
@@ -19,7 +21,9 @@ const slide = (btn) => {
 
     namesContainer[0].classList.add("active-names");
     namesContainer[1].classList.remove("active-names");
-  } else if (btn.classList.contains("next-btn")) {
+
+    isNext = true;
+  } else {
     prevImg.classList.remove("active");
     nextImg.classList.add("active");
 
@@ -28,10 +32,12 @@ const slide = (btn) => {
 
     namesContainer[0].classList.remove("active-names");
     namesContainer[1].classList.add("active-names");
+
+    isNext = false;
   }
 };
 
 /** listeners */
 slideBtns.forEach((b) => {
-  b.addEventListener("click", () => slide(b));
+  b.addEventListener("click", slide);
 });
