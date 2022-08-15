@@ -93,9 +93,9 @@ function handleTouchMove(evt) {
     }
   } else {
     if (yDiff > 0) {
-      slide();
+      // slide();
     } else {
-      slide();
+      // slide();
     }
   }
   /* reset values */
