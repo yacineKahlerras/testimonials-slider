@@ -52,3 +52,20 @@ document.onkeydown = (e) => {
     slide();
   }
 };
+
+let touchstartX = 0;
+let touchendX = 0;
+
+function checkDirection() {
+  if (touchendX < touchstartX) slide;
+  if (touchendX > touchstartX) slide;
+}
+
+document.addEventListener("touchstart", (e) => {
+  touchstartX = e.changedTouches[0].screenX;
+});
+
+document.addEventListener("touchend", (e) => {
+  touchendX = e.changedTouches[0].screenX;
+  checkDirection();
+});
